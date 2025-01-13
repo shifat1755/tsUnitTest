@@ -1,0 +1,36 @@
+{
+  "name": "nodets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "start2": "node --experimental-modules src/index.mjs",
+    "build": "tsc",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/chai": "4.3.7",
+    "@types/express": "^5.0.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.1",
+    "@types/sinon": "^17.0.3",
+    "@types/supertest": "^6.0.2",
+    "mocha": "^11.0.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "chai": "4.3.7"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.21.2",
+    "mongoose": "^8.8.4",
+    "nodemon": "^3.1.9",
+    "sinon": "^19.0.2",
+    "supertest": "^7.0.0"
+  }
+}
