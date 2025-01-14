@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dbURI = 'mongodb://localhost:27017/nodeTs';
 
 export const dbConnection = async () => {
+  console.log(process.env.CI)
   if (process.env.CI === 'true') {
     console.log('Skipping MongoDB connection in CI environment');
     return;

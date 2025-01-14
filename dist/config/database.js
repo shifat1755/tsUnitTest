@@ -13,6 +13,11 @@ exports.dbConnection = void 0;
 const mongoose = require('mongoose');
 const dbURI = 'mongodb://localhost:27017/nodeTs';
 const dbConnection = () => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(process.env.CI);
+    if (process.env.CI === 'true') {
+        console.log('Skipping MongoDB connection in CI environment');
+        return;
+    }
     try {
         yield mongoose.connect(dbURI);
         console.log("dbConnected");
