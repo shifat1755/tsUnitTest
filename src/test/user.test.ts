@@ -1,8 +1,9 @@
 import request from 'supertest';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import app from '../server';
 import User, { IUser } from '../models/user.model';
+import { after } from 'mocha';
+import { app, server } from '../server'; 
 
 describe('User Controller', () => {
   let sandbox: sinon.SinonSandbox;
@@ -14,7 +15,13 @@ describe('User Controller', () => {
   afterEach(() => {
     sandbox.restore();
   });
-
+  after(() => {
+    if (server) {
+      server.close(() => {
+        console.log('Server closed after tests');
+      });
+    }
+  });
   describe('POST /api/users/', () => {
     it('should create a user successfully', async () => {
       const mockUser: IUser = { _id: '1', name: 'John Doe', email: 'john.doe@example.com', password: 'password123' } as IUser;
