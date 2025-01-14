@@ -1,4 +1,4 @@
-ame: CI
+name: runTest
 on:
   push:
     branches:
